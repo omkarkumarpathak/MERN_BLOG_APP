@@ -13,13 +13,13 @@ app.use(express.json());
 
 mongoose.connect(process.env.MONGO)
     .then(()=>{
-        console.log("MongoDb connected Successfully")
+        console.log("MongoDB connected Successfully")
     })
     .catch((err)=>{
         console.log(err);
     })
 
-app.listen(4000,()=>{
+app.listen(3000,()=>{
     console.log("listening")
 })
 
