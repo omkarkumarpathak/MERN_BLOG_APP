@@ -7,7 +7,6 @@ export const verifyToken=(req,res,next)=>{
     const token=req.cookies.access_token;
    
     if(!token){
-        console.log("bhai");
         return next(errorHandler(401,'UnAuthorize'));
     }
     
@@ -15,7 +14,6 @@ export const verifyToken=(req,res,next)=>{
 
     jwt.verify(token, process.env.JWT_SECRET,(err,user)=>{
         if(err){
-            console.log('hello bai');
             return next(errorHandler(401,'UnAuthorized'));
         }
         req.user=user;
