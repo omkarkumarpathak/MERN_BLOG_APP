@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 import userRoutes from './router/user.route.js'
 import authRoutes from './router/auth.route.js'
+import postRoutes from './router/post.route.js'
 
 import cookieParser from 'cookie-parser';
 
@@ -27,6 +28,7 @@ app.use(cookieParser());
 
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/post', postRoutes);
 
 
 
