@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+//add ("type":"module") in package.json
 
 import userRoutes from './router/user.route.js'
 import authRoutes from './router/auth.route.js'
@@ -8,12 +9,11 @@ import postRoutes from './router/post.route.js'
 
 import cookieParser from 'cookie-parser';
 
-dotenv.config();
+dotenv.config(); //for using env
 
 const app=express(); 
 
-
-
+//connecting mongoDB server
 mongoose.connect(process.env.MONGO)
     .then(()=>{
         console.log("MongoDB connected Successfully")
